@@ -17,4 +17,18 @@ npm install haokur-ui --save
 -   [ ] 微信自动登录
 -   [ ] 老虎机转盘
 
+### 添加本地预览
+
+```shell
+git clone https://github.com/haokur/haokur-ui.git
+
+npm install
+
+npm start
+```
+
+### 特性
+
+-   基于 typescript + Vue
+
 ### 待续

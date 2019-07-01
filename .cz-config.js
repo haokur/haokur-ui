@@ -37,7 +37,13 @@ module.exports = {
   ],
   scopes: [
     {
-      name: "模块1"
+      name: "组件"
+    },
+    {
+      name: "文档"
+    },
+    {
+      name: "测试"
     }
   ],
   messages: {

@@ -1,40 +1,59 @@
 {
-  "name": "haokur-ui",
-  "version": "0.0.1",
-  "description": "高阶业务组件 UI 库",
-  "main": "./src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/haokur/haokur-ui.git"
-  },
-  "keywords": [
-    "vue",
-    "UI"
-  ],
-  "author": "haokur",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/haokur/haokur-ui/issues"
-  },
-  "homepage": "https://github.com/haokur/haokur-ui#readme",
-  "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "cz-customizable": "^6.2.0",
-    "husky": "^2.7.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
+    "name": "haokur-ui",
+    "version": "0.0.1",
+    "description": "高阶业务组件 UI 库",
+    "main": "./src/index.js",
+    "scripts": {
+        "dev": "webpack-dev-server --config build/webpack.dev.js",
+        "start": "npm run dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/haokur/haokur-ui.git"
+    },
+    "keywords": [
+        "vue",
+        "UI"
+    ],
+    "author": "haokur",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/haokur/haokur-ui/issues"
+    },
+    "homepage": "https://github.com/haokur/haokur-ui#readme",
+    "peerDependencies": {
+        "vue": "^2.3.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "css-loader": "^3.0.0",
+        "cz-conventional-changelog": "^2.1.0",
+        "cz-customizable": "^6.2.0",
+        "html-webpack-plugin": "^3.2.0",
+        "husky": "^2.7.0",
+        "node-sass": "^4.12.0",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^7.1.0",
+        "ts-loader": "^6.0.4",
+        "typescript": "^3.5.2",
+        "vue": "^2.6.10",
+        "vue-loader": "^15.7.0",
+        "vue-property-decorator": "^8.2.1",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compiler": "^2.6.10",
+        "webpack": "^4.35.2",
+        "webpack-cli": "^3.3.5",
+        "webpack-dev-server": "^3.7.2"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
     }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
 }
