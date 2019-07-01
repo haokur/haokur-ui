@@ -2,17 +2,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 
+// 从根目录查找起
+function resolve(dir) {
+    return path.join(__dirname, '..', dir);
+}
+
 module.exports = {
     mode: 'development',
     entry: {
-        main: path.resolve(__dirname, '../examples/src/index.ts'),
+        main: resolve('examples/src/index.ts'),
     },
     output: {
         filename: '[name].[hash:7].js',
-        path: path.resolve(__dirname, '../dist'),
+        path: resolve('dist'),
     },
     resolve: {
         extensions: ['.js', '.vue', '.ts', '.tsx'],
+        alias: {
+            vue$: 'vue/dist/vue.esm.js',
+            '@': resolve('examples/src'),
+        },
     },
     module: {
         rules: [
@@ -46,7 +55,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../examples/index.html'), // 引用的模板
+            template: resolve('examples/index.html'), // 引用的模板
             filename: 'index.html', // 打包后的命名
             inject: true, // 是否自动引入打包的js文件
         }),
